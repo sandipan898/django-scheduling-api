@@ -1,9 +1,8 @@
 from rest_framework import serializers
-from .models import PostArticle
+from .models import ScheduleCall
 
-class PostArticleSerializer(serializers.ModelSerializer):
+
+class ScheduleCallSerializer(serializers.ModelSerializer):
     class Meta:
-        model = PostArticle
-        fields = {
-            'title', 'description'
-        }
+        model = ScheduleCall
+        fields = '__all__'
