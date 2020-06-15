@@ -11,7 +11,7 @@ from .models import ScheduleCall
 # Create your views here.
 
 
-class ScheduleCallListCreateView(generics.ListCreateAPIView):
+class ScheduleCallView(generics.ListCreateAPIView):
     serializer_class = ScheduleCallSerializer
     queryset = ScheduleCall.objects.all()
     

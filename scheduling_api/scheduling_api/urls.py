@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from core.views import ScheduleCallListCreateView
+from core.views import ScheduleCallView
 
 
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
-    path('', ScheduleCallListCreateView.as_view(), name="test"),
+    path('', ScheduleCallView.as_view(), name="test"),
 ]
