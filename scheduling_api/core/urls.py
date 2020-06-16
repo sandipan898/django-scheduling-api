@@ -1,5 +1,5 @@
 from django.urls import path, include
-from core.views import ScheduleCallView, ServerStateView
+from core.views import ScheduleCallView, ServerStateView 
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
