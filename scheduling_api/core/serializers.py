@@ -5,4 +5,7 @@ from .models import ScheduleCall
 class ScheduleCallSerializer(serializers.ModelSerializer):
     class Meta:
         model = ScheduleCall
-        fields = '__all__'
+        timestamp = serializers.DateTimeField()
+        fields = (
+            'site_url', 'timestamp',
+        )
