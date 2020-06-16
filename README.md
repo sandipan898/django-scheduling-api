@@ -19,3 +19,4 @@
     4. we can make a GET call by passing 2 parameters (a DATE-TIME format as 1st parameter and a URL as 2nd parameter) to retrieve a perticular scheduled task.
         The url structure of the call should be like: http://127.0.0.1:8000/main/DATE-Time&URL 
     
+    5. the api with endpoint '/ping' e.g: 'http://127.0.0.1:8000/ping' returns a response of 'status': 'OK' to make sure that the server is alive
