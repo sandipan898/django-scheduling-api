@@ -5,6 +5,7 @@ from django.http import JsonResponse
 from rest_framework import permissions
 from rest_framework import generics, mixins, viewsets
 from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from .serializers import ScheduleCallSerializer
 from .models import ScheduleCall
@@ -23,9 +24,15 @@ class ScheduleCallView(viewsets.ModelViewSet):
 
     def retrieve(self, request, *args, **kwargs):
         params = kwargs
-        print(params['pk'])
-        obj = ScheduleCall.objects.filter(id=params['pk'])
+        print(params)
+        params_list = params['pk'].split('-')
+        obj = ScheduleCall.objects.filter(timestamp=params_list[2])
         print(obj)
         serializer = ScheduleCallSerializer(obj, many=True)
         return Response(serializer.data)
-    
+
+
+class ServerStateView(APIView):
+    def get(self, request, *args, **kwargs):
+        state = {"status":"OK"}
+        return Response(state)
